@@ -4,31 +4,30 @@ Questa repository contiene il sorgente LaTex per gli appunti di Analisi 1 in UNI
 
 Il file TeoremiDimostrazioni.tex contiene i seguenti teoremi:
 - **Numeri Reali e Numeri Complessi:**
-  - L'equazione x2 = 2 non ha una soluzione in Q (ossia la radice di 2 non è un numero
-razionale)
-  - Formula del prodotto di due numeri complessi in forma trigonometrica
+  - _L'equazione x2 = 2 non ha una soluzione in Q (ossia la radice di 2 non è un numero razionale)_
+  - _Formula del prodotto di due numeri complessi in forma trigonometrica_
 - **Monotonia:**
-  - La funzione composta di due funzioni crescenti è crescente
-  - Teorema di esistenza del limite destro (sinistro) di funzioni monotone
+  - _La funzione composta di due funzioni crescenti è crescente_
+  - _Teorema di esistenza del limite destro (sinistro) di funzioni monotone_
 - **Continuità:**
-  - Teorema di esistenza degli zeri. Metodo di bisezione
-  - Teorema dei valori intermedi
-  - Formula della derivata del prodotto
+  - _Teorema di esistenza degli zeri: metodo di bisezione_
+  - _Teorema dei valori intermedi_
+  - _Formula della derivata del prodotto_
 - **Calcolo Differenziale:**
-  - Teorema di Fermat
-  - Teorema del Valor Medio o di Lagrange
-  - Teorema di Rolle
-  - Teorema di de l'Hopital (caso 0/0 e limite finito)
+  - _Teorema di Fermat_
+  - _Teorema del Valor Medio o di Lagrange_
+  - _Teorema di Rolle_
+  - _Teorema di de l'Hopital (caso 0/0 e limite finito)_
 - **Serie:**
-  - Teorema Condizione Necessaria
+  - _Teorema Condizione Necessaria
 - **Criteri di convergenza per serie a termini non negativi:**
-  - Criterio del confronto Asintotico
-  - Criterio della radice n-esima
+  - _Criterio del confronto Asintotico
+  - _Criterio della radice n-esima
 - **Calcolo Integrale:**
-  - Teorema della media integrale
-  - Formula del prodotto di funzioni derivate
-  - Teorema Fondamentale del Calcolo Integrale
-  - Teorema di Torricelli-Barrow (Corollario 8.15)
+  - _Teorema della media integrale
+  - _Formula del prodotto di funzioni derivate
+  - _Teorema Fondamentale del Calcolo Integrale
+  - _Teorema di Torricelli-Barrow (Corollario 8.15)
 
 Il file Funzioni_Taylor_Serie_Integrali.tex contiene schemi riguardanti:
 - **Schema Studio di Funzioni**
