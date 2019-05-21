@@ -1,6 +1,6 @@
 # Analisi1-Unitn
-This repository contains the LaTex source code about the 19 theorems that are required for Analisi 1 exam.
-Questa repository contiene il sorgente LaTex per gli appunti di Analisi 1 in UNITN. Precisamente contiene i 19 teoremi richiesi all'esame e in aggiunta schemi e riassunti su argomenti fondamentali da sapere.
+Questa repository contiene il sorgente LaTex per gli appunti di Analisi 1 in UNITN. 
+Precisamente contiene i 19 teoremi richiesi all'esame e in aggiunta schemi e riassunti su argomenti da sapere per poter sviluppare al meglio gli esercizi d'esame.
 
 Il file TeoremiDimostrazioni.tex contiene i seguenti teoremi:
 - **Numeri Reali e Numeri Complessi:**
