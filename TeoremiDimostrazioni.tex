@@ -1,0 +1,493 @@
+\documentclass[10pt]{article}
+\usepackage[italian]{babel}
+\usepackage{paralist}
+\usepackage{enumitem}
+\usepackage{geometry}
+\usepackage{amsmath,amsfonts,amssymb} 
+\geometry{a4paper,top=2cm,bottom=2cm,left=2.5cm,right=2.5cm, heightrounded,bindingoffset=5mm}
+
+
+\title{Dimostrazioni e Definizioni Analisi I}
+\author{Aymane Chabbaki}
+\date{Dicembre/Gennaio 2018}
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+
+
+
+\section{Numeri Reali e Numeri Complessi}
+
+
+\subsection{L’equazione $x^2 = 2$ non ha una soluzione in $\mathbb{Q}$ (ossia la radice di 2 non
+è un numero razionale).}
+
+\begin{itemize}
+\item
+Supponiamo per assurdo che $\sqrt{2} \in Q$, $\exists\, x \in Q$ $ tc.$ $x^2 =2 $
+\item
+Dato che $x \in \mathbb{Q}$ ho che $x$ sarà del tipo $\displaystyle {\frac{p}{q}}$, $p\in \mathbb{N}$, $q\in \mathbb{N}$ e prendiamo $p$ e $q$ primi tra loro.
+\item
+Quindi si ha $\displaystyle {x^2 =\frac{p^2}{q^2}=2}$, da cui $p^2=2q^2\Rightarrow p^2$ è pari $\Rightarrow$ $p$ è pari e 
+quindi $p=2k, k \in \mathbb{N}.$  
+\item
+Ma allora $p^2=2q^2\iff 4k^2=2q^2$, da cui $q^2=2k^2 \Rightarrow q^2$ è pari $\Rightarrow$ $q$ è pari.
+\item
+Questo è impossibile perchè $p$ e $q$ sono primi fra loro (contraddizione C.V.D.).
+\end{itemize}
+\medskip 
+\subsection{Formula del prodotto di due numeri complessi in forma trigonometrica}
+\begin{itemize}
+\item
+$z_1, z_2 \in \mathbb{C}$ e posto $\theta_1 = arg$ $z_1$ e $\theta_2 = arg$ $z_2$ si ha $z_1 * z_2 = |z_1| * |z_2|$ $(\cos(\theta_1 +\theta_2)+ i\sin(\theta_1 +\theta_2))$, e questa formula viene dedotta sviluppando i calcoli:
+\begin{itemize}
+\item
+$z_1 * z_2 = |z_1| (\cos(\theta_1) + i\sin(\theta_1)) * |z_2| (\cos(\theta_2) + i\sin(\theta_2))$ \smallskip
+\subitem
+$ \; \; \; \; = |z_1| * |z_2|$ $[\cos(\theta_1) \cos(\theta_2)+ i^2\sin(\theta_1)\sin(\theta_2) + i\cos(\theta_1)\sin(\theta_2) + i\sin(\theta_1) \cos(\theta_2)]$\smallskip
+\subitem
+$ \; \; \; \; = |z_1| * |z_2|$ $[\cos(\theta_1) \cos(\theta_2)-\sin(\theta_1) \sin(\theta_2)+i[(\cos(\theta_1) \sin(\theta_2)+\sin(\theta_1) \cos(\theta_2)]]$\smallskip
+\subitem
+$ \; \; \; \; = |z_1| * |z_2|$ $(\cos(\theta_1 +\theta_2)+ i\sin(\theta_1 +\theta_2))$
+\end{itemize}
+\end{itemize}
+\medskip 
+\section{Monotonia}
+\subsection{La funzione composta di due funzioni crescenti è crescente.}
+\begin{itemize}
+\item
+Siano $f$, $g$ funzioni reali di una variabile reale crescenti.
+\item
+Sia $f = dom(f) \rightarrow y$, $x_1, x_2 \in dom(f)$,  $x_1 < x_2$, $f(x_1) < f(x_2)$
+\item
+Sia $g = dom(g) \rightarrow y'$, $y_1, y_2 \in dom(g)$,  $y_1 < y_2$, $g(y_1) < g(y_2)$
+\item Allora:
+\begin{itemize}
+\item
+Siano $y_1 = f(x_1)$, $y_2=f(x_2)$
+\item
+Essendo $f$ crescente e $g(y_1) < g(y_2) \implies g(f(x\ped{1})) < g(f(x\ped{2}))$
+\item
+Quindi $(f \circ g)$ è crescente.
+\end{itemize}
+\end{itemize}
+\medskip 
+\subsection{Teorema di esistenza del limite destro (sinistro) di funzioni monotone.}
+
+\begin{itemize}
+\item
+$f:X\subset \mathbb{R}  \rightarrow  \mathbb{R} $ monotona:
+\begin{itemize}
+\item
+Se $f$ è crescente in X, $x\ped{0}$ $\in \bar{\mathbb{R} }$ punto di accumulazione destro per X, allora: 
+\subitem $\exists$  $\displaystyle {\lim_{ x \to x_0^+} {f(x)}= inf f_{X\cap(x\ap{+}\ped{0}, +\infty)}}$
+\end{itemize}\medskip
+\item 
+DIMOSTRAZIONE:
+\begin{itemize}
+\item
+$f$ crescente
+\item
+$l = inf$ $f(x)_{X\cup(x_o, +\infty)}$
+\begin{enumerate}
+\item
+$f(x) \geq l$ $\forall x \in (x_0, +\infty)\cap X$ (è un minorante)
+\item
+$\forall \displaystyle{\epsilon} > 0$ $\exists$ $x_\epsilon \in (x_0, +\infty)\cap X$ $tc.$ $\displaystyle {f(x_\epsilon)} < \displaystyle{l+\epsilon}$
+\end{enumerate}\medskip
+\item
+Poichè $f$ è crescente, si ha $f(x) \leq f(x_\epsilon) \leq l+\epsilon$.
+\item
+Per la crescenza della funzione, il limite esiste.
+\end{itemize}
+\end{itemize}
+
+\section{Continuità}
+\subsection{Teorema di esistenza degli zeri. Metodo di bisezione}
+\begin{itemize}
+\item
+DEFINIZIONE
+\begin{itemize}
+\item
+Sia $f:[a,b]\rightarrow \mathbb{R}$ continua e sia $f(a)*f(b)<0$ (ovvero $f(a)$ e $f(b)$ non sono nulli e hanno segno opposto). 
+\item
+Allora $f$ ammette almeno uno zero in (a,b), cioè $\exists$ $x\ped{0} \in (a,b)$ $tc.$ $f(x\ped{0}) =0$.
+\item
+Se $f$ è strettamente monotona allora $\exists!$ $x\ped{0} \in (a,b)$ $tc.$ $f(x\ped{0}) =0$
+\end{itemize}
+\medskip
+\item
+DIMOSTRAZIONE 
+\begin{itemize}
+\item 
+Sia $f(a) > f(b)$ con $f=[a,b]$
+\item
+Bisezioniamo, cioè trovo il punto medio $\displaystyle {c\ped{0}= \left(\frac{a\ped{0}+b\ped{0}}{2}\right)}$.
+\item
+Se $f(c\ped{0})$ = 0 abbiamo trovato lo zero.
+\item
+Se $f(x\ped{0}) < 0$, ripeto la bisezione considerando $a\ped{1} = a\ped{0}$ e $b\ped{1} = c\ped{0}$.
+\item
+Se $f(x\ped{0}) > 0$, ripeto la bisezione considerando $a\ped{1} = c\ped{0}$ e $b\ped{1} = b\ped{0}$.
+\item
+Procedo fino all'ottenimento di $f(c_0)=0$
+\end{itemize}
+\medskip 
+\end{itemize}
+\subsection{Teorema dei valori intermedi.}
+\begin{itemize}
+\item
+DEFINIZIONE
+\begin{itemize}
+\item
+Sia $I \subseteq \mathbb{R} $ intervallo, sia $f$: $I \rightarrow \mathbb{R} $ continua. 
+\item
+Allora $f$ assume tutti i valori compresi tra $inf$ $f$ e $sup$ $f$.
+\end{itemize}
+\medskip
+\item
+DIMOSTRAZIONE
+\begin{itemize}
+\item
+Sia $y \in \mathbb{R}$ $tc.$ $inf_I f < y <  sup_I f$ . 
+\item
+Per definizione di $sup$ ed $inf$ $\exists$ $a, b \in I$ $tc.$ $ f(a) < y < f(b)$
+\item
+Basta allora applicare il corollario del Teorema dell'esistenza degli zeri alla funzione 
+
+$f(a)$ e $f(b) \longrightarrow f(x)= y$ in $[a,b]$
+\item
+Si ha che $\exists$ $x\ped{0} \in [a, b]$ $tc.$ $f(x\ped{0})=y$
+\end{itemize}
+\end{itemize}
+\medskip \medskip 
+\subsection{Formula della derivata del prodotto.}
+\begin{itemize}
+\item
+$(f \circ g)'(x_0) = f'(g(x_0)) * g'(x_0)$
+\smallskip
+\item DIMOSTRAZIONE
+\begin{itemize}
+\item
+Nel caso $g'(x_0) \neq 0$ e nel caso $g(x) \neq g(x_0))$:
+\item 
+$(f \circ g)'(x_0) = \displaystyle{{\lim_{x \to x_0}}{\frac{f(g(x)) - f(g(x_0)}{x-x_0}}}$
+\subitem
+$\; \; \; \; \; \; \; \; \; \; \; \;= \displaystyle{{\lim_{x \to x_0}{\frac{f(g(x)) - f(g(x_0))}{g(x)-g(x_0)} * \frac{g(x) - g(x_0)}{x-x_0}}}}$ \smallskip \smallskip
+\item
+Dato che $f$ e $g$ sono derivabili, concludiamo che:
+$$(f \circ g)'(x_0) = f'(g(x_0)) * g'(x_0)$$
+\end{itemize}
+\end{itemize}
+\medskip \medskip 
+\section{Calcolo Differenziale}
+\subsection{Teorema di Fermat}
+\begin{itemize}
+\item
+DEFINIZIONE
+\begin{itemize}
+\item 
+Sia $f: $ $(a,b) \rightarrow \mathbb{R}$ con $x_0 \in (a,b)$.
+\item 
+Se $f$ è derivabile in $x_0$ e se $x_0$ è un punto di max (o di min) locale di $f$, allora $f'(x_0) = 0$
+\end{itemize} \medskip
+\item 
+DIMOSTRAZIONE
+\begin{itemize}
+\item
+$x_o$ punto di max locale $\implies \exists$ $U$ intorno di $x_0$ $tc.$ $f(x_0)$ $\geq f(x)$ $\forall x \in U \cap (a,b)$ con $f(x)-f(x_0) \leq 0$ \medskip
+\item
+Si ha $\displaystyle{\frac{f(x)-f(x_0)}{x-x_0}}$:
+$$\frac{f(x)-f(x_0)}{x-x_0} \longrightarrow_{x \to x_0^+} f'(x) \leq 0$$ \medskip
+$$\frac{f(x)-f(x_0)}{x-x_0} \longrightarrow_{x \to x_0^-} f'(x) \geq 0$$ \medskip
+\item
+Allora deve essere $f'(x) = 0$
+\end{itemize}
+\end{itemize}
+
+\medskip 
+
+\subsection{Teorema del Valor Medio o di Lagrange}
+\begin{itemize}
+\item
+DEFINIZIONE
+\begin{itemize}
+\item
+Sia $f:[a,b]$ $\rightarrow \mathbb{R}$  continua  in  $[a,b]$ e derivabile in $(a,b)$. 
+\item
+Allora esiste (almeno) un punto $c \in$ $(a,b)$ tale che:
+$$f'(c) = \frac{f(b)-f(a)}{b-a}$$
+\end{itemize} \medskip
+\item 
+DIMOSTRAZIONE
+\begin{itemize}
+\item
+Basta applicare il teorema di Rolle alla funzione:
+$$h(x) = f(x) - \left[\frac{f(b)-f(a)}{b-a}*(x-a) + f(a)\right]$$\medskip
+\item
+$h(a) = f(a) - f(a) = 0$
+\item
+$h(b) = f(b) - f(b)= 0$ \medskip
+\item
+Verificato questo, posso usare Rolle e quindi $\exists$ $c \in (a,b)$ $tc.$ $h'(c)=0$ \medskip
+\item
+$h'(c) = f'(c) - \displaystyle{\frac{f(b)-f(a)}{b-c}}$ \medskip
+\item
+Quindi $f'(c) = \displaystyle{\frac{f(b)-f(a)}{b-c}}$
+\end{itemize}
+\end{itemize}
+\bigskip \medskip \medskip
+\subsection{Teorema di Rolle}
+\begin{itemize}
+\item 
+DEFINIZIONE
+\begin{itemize}
+\item
+Sia $f:[a,b] \rightarrow \mathbb{R} $, continua in $[a,b]$, derivabile in $(a,b)$ e tale che $f(a)=f(b)$.
+\item 
+Allora $\exists$ $c \in (a,b)$ $tc.$ $f'(c)=0$
+\end{itemize}\medskip
+\item
+DIMOSTRAZIONE
+\begin{itemize}
+\item
+Poichè  $f$ è continua in $[a, b]$, intervallo chiuso e limitato, per il Teorema di Weierstrass esistono $max_{[a,b]}$ $f$ e $min_{[a,b]}$ $f$, sono possibili due casi:
+\begin{enumerate}
+\item
+$max_{[a,b]}$ $f$ e $f = min_{[a,b]}$ sono assunti agli estremi:
+\begin{itemize}
+\item
+$max_{[a,b]}$ $f = min_{[a,b]}$ $f = f(a) = f(b)$
+\item
+$f$ è costante in $[a, b]$ e $f'(x) = 0$ $\forall$ $c$ $\in$ (a,b).
+\end{itemize} \medskip
+\item
+$max_{[a,b]}$ e $f = min_{[a,b]}$ sono assunti all'interno dell'intervallo:
+\begin{itemize}
+\item
+Supponiamo sia $x_0 \in (a,b) \implies f'(x_0) = 0$ per il Teorema di Fermat.
+\end{itemize} 
+\end{enumerate}
+\end{itemize}
+\end{itemize}\medskip \medskip
+\subsection{Teorema di de l’Hopital (caso 0/0 e limite finito)}
+\begin{itemize}
+\item
+$f,g: (a,b) \rightarrow  \mathbb{R}  $ derivabile in $ (a,b) $ tale che:
+\begin{enumerate}
+\item
+$\displaystyle{\lim_{x \to a\ped{+}}{f(x)} = \lim_{x \to a\ped{+}}{g(x)} = 0}$ \medskip
+\item
+$g'(x)  \neq 0 $ in un intorno di $a$\medskip
+\item
+$\displaystyle{\lim_{x \to a\ped{+}}{\frac{f'(x)}{g'(x)}} = l \in \mathbb{R}}$\medskip
+\end{enumerate}
+\item
+Allora in un intorno di $a$ e se $g(x) \neq 0 $, $ \exists$ $\displaystyle{\lim_{x \to a\ped{+}}{\frac{f(x)}{g(x)}}=l \in \mathbb{R}}$
+\item \medskip
+DIMOSTRAZIONE
+\begin{itemize}
+\item
+$g'(x) \neq$ 0 in un intorno di $a$, cioè $g$ è strettamente monotona in un intorno di $a$
+\item
+Quindi perchè $\displaystyle{\lim_{x \to a\ped{+}}{g(x)=0}}$ si ha che $g(x) \neq 0$ in un intorno di a.
+\item
+Se adesso considero le funzioni $f$ e $g$ estese in $a$, con valore 0, ottengo così due funzioni continue in [a, x] e derivabili in (a, x):
+$$ f(x) = \begin{cases} f(x) & (a,b),\\ 0 & x=a \end{cases} $$
+$$ g(x) = \begin{cases} g(x) & (a,b),\\ 0 & x=b,\\ \end{cases} $$ \medskip
+\item
+Applico Cauchy ad $f$ e $g$, quindi $\exists $ $ c_x \in (a,x) $ tale che:
+$$\frac{f(x)}{g(x)}=\frac{f(x)-f(a)}{g(x)-g(a)}= \lim_{c_x\to a\ap{+}}{\frac{f'(c_x)}{g(c_x)}}\rightarrow l$$ per ipotesi.
+\end{itemize}
+\end{itemize} 
+\bigskip \bigskip \bigskip \bigskip
+\section{Serie}
+\subsection{Teorema Condizione Necessaria}
+\begin{itemize}
+\item
+$ \sum a\ped{n} $ convergente $\implies$ $\displaystyle{\lim_{n \to +\infty}{\sum a\ped{n}}} = 0 $
+\item
+Se $ \sum a\ped{n} $ è convergente, allora per definizione $\exists$ $ \displaystyle{\lim_{n \to +\infty}{s_n = s} \in \mathbb{R}}$
+\item
+Basta osservare che $a_n = s_n - s_{n-1}$ per $n \to + \infty$
+\subitem
+$\implies \displaystyle{\lim_{n \to +\infty}{a_n = s - s = 0}}$
+\end{itemize}
+\section{Criteri di convergenza per serie a termini non negativi}
+\subsection{Criterio del confronto Asintotico}
+\begin{itemize}
+\item
+DEFINIZIONE
+\begin{itemize}
+\item
+${a_n}_n$, ${b_n}_n$ successioni di numeri reali positivi tali che $\displaystyle{ \lim_{n}{\frac{a_n}{b_n} = l \in \mathbb{R}}}$
+\item
+Allora $\sum a_n$ e $\sum b_n$ hanno lo stesso carattere e si dice che $a_b$ è asintotico $l$ rispetto a $b_n$
+\end{itemize}\medskip \smallskip
+\item 
+DIMOSTRAZIONE
+\begin{itemize}
+\item
+$\displaystyle{\left(l - \frac{l}{2}\right) < \frac{a_n}{b_n} < \left(l + \frac{l}{2}\right)}$ positive da un certo n in poi
+\item
+Quindi: $\displaystyle{b_n \left(l - \frac{l}{2}\right) < a_n < b_n \left(l + \frac{l}{2}\right)}$
+\end{itemize}
+\end{itemize}
+\medskip
+\subsection{Criterio della radice n-esima}
+\begin{itemize}
+\item
+DEFINIZIONE
+\begin{itemize}
+\item
+${a_n}$ succesione di numeri reali positivi.
+\item
+Se esiste il $\lim_{n}{\sqrt[n]{a_n} = l}$, allora:
+\begin{itemize}
+\item 
+$l<1 \implies \sum a_n$ converge
+\item 
+$l>1 \implies \sum a_n$ diverge
+\item 
+$l=1 \implies \sum a_n$ nulla puo dirsi
+\end{itemize}\medskip \smallskip
+\item 
+DIMOSTRAZIONE
+\begin{itemize}
+\item
+$\displaystyle {\lim_{n}{\sqrt[n]{a_n} = l < 1}}$
+\begin{itemize}
+\item
+$\displaystyle {\sqrt[n]{a_n} \leq \left(\frac{l+1}{2}\right) \implies 
+\sqrt[n]{a_n} \leq \left(\frac{l+1}{2}\right) < 1}$
+\end{itemize}
+\item
+Quindi si ha che $\displaystyle {a_n \leq \left(\frac{l+1}{2}\right)^n}$:
+\begin{itemize}
+\item
+$\displaystyle{\sum \left(\frac{l+1}{2}\right)^n}$ è convergente (serie geometrica con termine generale $\leq 1$); \medskip
+\item
+Allora per il Criterio del Confronto $\sum a_n$ è convergente. \medskip \smallskip
+\end{itemize}
+\item
+$\displaystyle {\lim_{n}{\sqrt[n]{a_n} = l > 1}} \implies \sqrt[n]{a_n} \geq 1$ \medskip
+\begin{itemize}
+\item
+Vuol dire che $a_n \geq 1$ e visto che il termine generale non tende a 0, la serie diverge. \smallskip
+\end{itemize}
+\item
+Per $l=1$:
+\begin{itemize}
+\item
+$\displaystyle{\sum \frac{1}{n^3} \rightarrow \sqrt[n]{\frac{1}{n^3}} \rightarrow 1}$, in questo caso la serie. converge. \medskip
+\item
+$\displaystyle{\sum \frac{1}{n} \rightarrow \sqrt[n]{\frac{1}{n}} \rightarrow 1}$, in questo caso la serie diverge.
+\end{itemize}
+\end{itemize}
+\medskip
+\section{Calcolo Integrale}
+\subsection{Teorema della media integrale}
+\begin{itemize}
+\item
+DEFINIZIONE
+\begin{itemize}
+$f: [a, b] \rightarrow \mathbb{R}$ continua, allora $\exists$ $c \in [a,b]$ tale che: $$\int_a^b \! f(x) \, \mathrm{d}x = f(c)(b-a)$$
+\end{itemize} \medskip
+\item
+DIMOSTRAZIONE
+\begin{itemize}
+\item
+Si ha $m \leq f(x) \leq M$ $\forall x \in [a,b]$ dove $m = inf_{[a,b]}$ $f$ e $m = sup_{[a,b]}$ $f$ per il Teorema di Weiterstrass.\medskip
+\item 
+Quindi abbiamo che:
+$$\int_a^b \! m \, \mathrm{d}x \leq \int_a^b \! f(x) \, \mathrm{d}x \leq \int_a^b \! M \, \mathrm{d}x $$ \qquad cioè:
+$$ m (b-a) \leq \int_a^b \! f(x) \, \mathrm{d}x \leq M (b-a) $$ \qquad cioè:
+$$ m \leq \displaystyle{\frac{\int_a^b \! f(x) \, \mathrm{d}x}{b-a}} \leq M $$ \smallskip
+\item
+Ora, essendo $f$ continua ed assume tutti i valori tra $m$ e $M$, $\exists$ $c$ $\in [a,b]$ $tc.$ \medskip
+
+$f(c) = \displaystyle{ \frac{\int_a^b \! f(x) \, \mathrm{d}x}{b-a}}$, cioè $\displaystyle{\int_a^b \! f(x) \, \mathrm{d}x = f(c)(b-a)}$ \qquad C.V.D.
+\end{itemize}
+\end{itemize} \medskip \medskip
+\subsection{Formula del prodotto di funzioni derivate.}
+\begin{itemize}
+\item
+Voglio dimostrare che se ho $y = f(x) * g(x)$ allora ne segue $y'= g(x)*f'(x) + f(x)*g'(x)$.\medskip
+\begin{itemize}
+\item
+$(f*g)'(x_0) = \displaystyle{\lim_{x \to x_0}{\frac{f(x)*g(x) - f(x_0)*g(x_0)}{x-x_0}}}$\medskip
+\subitem
+$\; \; \; \; \; \; \; \; \; \; \; \;= \displaystyle{\lim_{x \to x_0}{\frac{f(x)*g(x) - f(x_0)*g(x) + f(x_0)*g(x) - f(x_0)*g(x_0)}{x-x_0}}}$\medskip
+\subitem
+$\; \; \; \; \; \; \; \; \; \; \; \;= \displaystyle{\lim_{x \to x_0}{g(x) \left[\frac{f(x)*f(x_0)}{x-x_0}\right] + f(x_0) \left[\frac{g(x)*g(x_0)}{x-x_0}\right]}}$ \medskip \smallskip
+\item
+Visto che $f(x)$ e $g(x)$ sono continue si ha che $(f*g)'(x_0) = \displaystyle{g(x_0)*f'(x_0) + f(x_0)*g'(x_0)\hspace{1cm}}$ C.V.D.
+\end{itemize}
+\end{itemize} 
+\bigskip \bigskip \bigskip \bigskip \bigskip \bigskip \bigskip \bigskip \bigskip \bigskip   
+\subsection{Teorema Fondamentale del Calcolo Integrale}
+\begin{itemize}
+\item
+DEFINIZIONE
+\begin{itemize}
+\item
+$f:[a,b] \rightarrow \mathbb{R}  $ continua. 
+\item 
+La funzione integrale $F\ped{a}(x) = \displaystyle{\int_a^x \! f(t) \, \mathrm{d}t}$ è allora derivabile in $ [a,b] $ e vale $\displaystyle{F'\ped{a}(x) = f(x)}$, cioè $F_a$ è una primitiva di $f(x)$
+\end{itemize}\medskip
+\item
+DIMOSTRAZIONE
+\begin{itemize}
+\item
+Sia $x\ped{0} \in [a, b]$, allora si ha:
+\begin{flushleft} 
+$F_a(x) - F_a(x_0) = \displaystyle{\int_a^x \! f(t) \, \mathrm{d}t - \int_{a}^{x_0} f(t) \, \mathrm{d}t}$\smallskip \smallskip
+
+$\qquad \qquad \qquad \; \; \; = \displaystyle{\int_a^x \! f(t) \, \mathrm{d}t + \int_{x_0}^{x} f(t) \, \mathrm{d}t - \int_a^{x_0} \! f(t) \, \mathrm{d}t}$\smallskip \smallskip
+
+$\qquad \qquad \qquad \; \; \; = \displaystyle{\int_{x_0}^{x} f(t) \, \mathrm{d}t}$ \smallskip \smallskip
+\end{flushleft}
+\smallskip \smallskip \smallskip
+\item
+Per il teorema della Media Integrale $\displaystyle{F_a(x) - F_a(x_0) = f(c_x) (x-x_0)}$, con $c_x \in [x,x_0]$ \smallskip
+\item
+Quindi $\displaystyle{\frac{F_a(x) - F_a(x_0)}{x - x_0} = \frac{f(c_x)(x-x_0)}{x - x_0} = f(c_x)}$ \smallskip
+\item
+$f(c_x) = \displaystyle{\lim_{x \to x_0}{f(c_x)} = f(x_0)}$ perchè $f$ è continua.
+\end{itemize}
+\end{itemize}
+\end{itemize}
+\medskip
+\subsection{Teorema di Torricelli-Barrow (Corollario 8.15)}
+\begin{itemize}
+\item
+DEFINIZIONE
+\begin{itemize}
+\item
+Sia $ f: [a,b] \rightarrow \mathbb{R}$ continua. 
+\item
+Se F è una primitiva di $f$ in $ [a,b] $, allora:
+$$\int_a^b \! f(x) \, \mathrm{x}d= F(b) - F(a) = F(x)]^b_a$$
+\end{itemize}
+\item
+DIMOSTRAZIONE
+\begin{itemize}
+\item
+Sia $F_a(x)$ una primitiva di $f(x)$, quindi $F_a(x) = F(x) + k$.
+\item
+Se calcolo $\displaystyle{F_a(x) = F(x) + k}$ in $a$ ottengo:
+\begin{itemize}
+\item
+$ 0 = F(a) + k$
+\item
+Quindi $k = -F(a)$
+\item
+Alla fine si ha: $\displaystyle{F_a(x) = F(x) -F(a)}$
+\end{itemize}
+\item
+Adesso basta scrivere $F_a(b)$ si ha $\displaystyle{F_a(b) = \int_a^b \! f(t) \, \mathrm{d}t = F(b) - F(a)}$
+\end{itemize}
+\end{itemize}
+\end{itemize}
+\end{document}
